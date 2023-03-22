@@ -46,7 +46,7 @@ async function main() {
     card.className = 'card';
 
     const flag = document.createElement('img');
-    flag.src = country.flags.png;
+    flag.src = country.flags ? country.flags.png : '';
     flag.className = 'card-img-top';
 
     const cardBody = document.createElement('div');
