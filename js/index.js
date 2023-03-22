@@ -4,14 +4,19 @@ const darkModeToggle = document.getElementById('darkModeToggle');
 const darkModeText = document.querySelector('#darkModeToggle h4');
 const darkModeClass = 'dark-mode';
 const lightModeClass = 'light-mode';
+const modeIcon = document.getElementById('modeIcon');
+const sunIconSrc = './assets/images/icons/icons8-light-mode-78.png'; 
+const moonIconSrc = './assets/images/icons/icons8-crescent-moon-64.png';
 
 darkModeToggle.addEventListener('click', () => {
     document.body.classList.toggle(darkModeClass);
     document.body.classList.toggle(lightModeClass);
 
     if (document.body.classList.contains(darkModeClass)) {
+        modeIcon.src = sunIconSrc;
         darkModeText.textContent = 'Light Mode';
     } else {
+        modeIcon.src = moonIconSrc;
         darkModeText.textContent = 'Dark Mode';
     }
 });
