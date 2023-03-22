@@ -103,6 +103,31 @@ select {
     color: var(--White);
 }
 
+.dark-mode .form-control,
+.dark-mode .form-select {
+  background-color: var(--Very-Dark-Blue);
+  color: var(--White);
+  border-color: var(--Dark-Gray);
+}
+
+.dark-mode .input-group-text {
+  background-color: var(--Very-Dark-Blue);
+  color: var(--White);
+  border-color: var(--Dark-Gray);
+}
+
+.dark-mode .form-control:focus {
+  border-color: var(--White);
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+}
+
+.dark-mode .form-control::placeholder {
+  color: var(--White);
+}
+
+.dark-mode .form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
 /* Light Mode  */
 .light-mode {
     background-color: var(--Very-Light-Gray);
@@ -114,8 +139,49 @@ select {
     color: black;
 }
 
-.image-container {
+/* crescent image container */
+.crescent-image-container {
     width: auto;
     height: 2rem;
     margin-right: 0.5rem;
 }
+
+/************************
+*** custom styling ******
+*************************/
+.custom-input {
+
+    border: 1px solid var(--Dark-Gray);
+    padding: 0.5rem;
+}
+
+.custom-select {
+
+    border: 1px solid var(--Dark-Gray);
+    padding: 0.5rem;
+}
+
+.custom-select-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-chevron {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.card {
+  width: 18rem;
+  margin: 15px 15px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* .card-img-top {
+  width: 100%;
+  height: auto;
+} */
