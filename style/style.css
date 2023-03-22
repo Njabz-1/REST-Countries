@@ -179,11 +179,12 @@ select {
   margin: 15px 15px;
   display: inline-block;
   vertical-align: top;
-  border-radius: 1rem;
+  /* border-radius: 1rem; */
+  height: 350px;
 }
 
 .card-img-top {
-  border-radius: 1rem 1rem 0 0;
+  /* border-radius: 0.5rem 0.5rem 0 0; */
   width: 100%;
   height: auto;
 }
