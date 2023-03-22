@@ -27,20 +27,29 @@ async function getCountries(){
         return [];
       }
 }
+let currentPage = 1;
+const countriesPerPage = 8;
 
 async function main() {
     const countries = await getCountries();
     console.log(countries);
-    const countriesContainer = document.getElementById('countries');
-
-    countries.forEach(country => {
-        const countryCard = createCountryCard(country);
-        countriesContainer.appendChild(countryCard);
+    const countriesContainer = document.getElementById("countries");
+  
+    loadMoreCountries(countries, countriesContainer);
+  
+    // Add the scroll event listener
+    window.addEventListener("scroll", () => {
+      if (window.innerHeight + window.pageYOffset >=
+        document.documentElement.offsetHeight - 1) {
+        currentPage++;
+        loadMoreCountries(countries, countriesContainer);
+      }
     });
   }
   
   main();
 
+//   Creating country card
   function createCountryCard(country) {
     const card = document.createElement('div');
     card.className = 'card';
@@ -79,3 +88,13 @@ async function main() {
 
     return card;
 }
+
+function loadMoreCountries(countries, countriesContainer) {
+    const startIndex = (currentPage - 1) * countriesPerPage;
+    const endIndex = startIndex + countriesPerPage;
+  
+    for (let i = startIndex; i < endIndex && i < countries.length; i++) {
+      const countryCard = createCountryCard(countries[i]);
+      countriesContainer.appendChild(countryCard);
+    }
+  }
