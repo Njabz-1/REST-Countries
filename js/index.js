@@ -45,7 +45,7 @@ async function main() {
     row.className = "row g-5";
     container.appendChild(row);
   
-    document.body.appendChild(container);
+    countriesContainer.appendChild(container);
   
   
     loadMoreCountries(countries, row);
