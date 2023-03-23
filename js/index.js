@@ -107,8 +107,17 @@ function createCountryCard(country) {
   
     // Append the card to the column element
     col.appendChild(card);
-  
+
+    // Add click event listener to card element
+    card.addEventListener('click', () => {
+      // Save the selected country data in the local storage
+      localStorage.setItem('selectedCountry', JSON.stringify(country));
+      // Redirect to the country.html page
+      window.location.href = 'country.html';
+    });
+    console.log(localStorage.getItem('selectedCountry'));
     return col;
+    
   }
 
 function loadMoreCountries(countries, row) {
