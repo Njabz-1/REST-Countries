@@ -26,10 +26,13 @@
             </button>
         </header>
         <div id="container">
-            <div class="px-5">
-                <button class="btn btn-primary">Back</button>
+            <div class="px-5 g-0">
+                <button id="back-button" class="btn back-button">
+                    <img src="assets/images/icons/icons8-left-arrow-50.png" alt="Back Arrow" class="back-arrow" />
+                    Back
+                </button>
             </div>
-            <div class="mt-5 px-5 justify-content-center row g-0">
+            <div class="mt-5 px-5 justify-content-center row g-0 mb-5">
                 <div class="col-4">
                     <h3>Country</h3>
                 </div>
@@ -45,11 +48,12 @@
                     <p class="fw-bolder">Languages: <span class="fw-normal" id="languages"></span></p>
                 </div>
             </div>
-            <!-- <div class="row g-0">
-                <div class="col-3 ms-auto">
-                    <p>Border Countries </p>
+            <div id="borders" class="row g-0 justify-content-center">
+                <div class="col-4"></div>
+                <div class="col-5">
+                    <h6 class="fw-bolder">Border Countries:</h5>
                 </div>
-            </div> -->
+            </div>
         </div>
     </main>
     <script src="./js/country.js"></script>

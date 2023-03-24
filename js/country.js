@@ -1,5 +1,4 @@
 // Toggling dark mode
-
 const darkModeToggle = document.getElementById('darkModeToggle');
 const darkModeText = document.querySelector('#darkModeToggle h4');
 const darkModeClass = 'dark-mode';
@@ -21,6 +20,10 @@ darkModeToggle.addEventListener('click', () => {
     }
 });
 
+// Back to home page
+document.getElementById('back-button').addEventListener('click', () => {
+    window.location.href = 'index.html';
+  });
 // getting selected country via local storage
 const selectedCountry = JSON.parse(localStorage.getItem('selectedCountry'));
 
@@ -35,7 +38,6 @@ const topLevelDomain = document.getElementById('tld');
 const currency = document.getElementById('currency');
 const languages = document.getElementById('languages');
 
-// document.getElementById("country-name").textContent = selectedCountry.name.common;
 countryNameEl.textContent = selectedCountry.name.common;
 nativeNameEl.textContent = Object.values(selectedCountry.name.nativeName)[0].common;
 populationEl.textContent = selectedCountry.population;

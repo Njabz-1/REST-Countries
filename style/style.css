@@ -205,3 +205,43 @@ select {
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
 }
+
+/* back button */
+.back-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+.back-arrow {
+  width: 20px;
+  height: 20px;
+}
+
+.back-button:hover {
+  background-color: var(--Dark-Gray);
+  cursor: pointer;
+}
+
+.dark-mode .back-button {
+  background-color: var(--Very-Dark-Blue);
+  border-color: var(--Dark-Gray);
+  color: var(--White);
+}
+
+.dark-mode .back-button:hover {
+  background-color: var(--Dark-Blue);
+}
+
+.light-mode .back-button {
+  background-color: var(--White);
+  border-color: var(--Dark-Gray);
+  color: var(--Very-Dark-Blue-2);
+}
+
+.light-mode .back-button:hover {
+  background-color: var(--Very-Light-Gray);
+}
