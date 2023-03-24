@@ -258,6 +258,8 @@ select {
   border: 1px solid currentcolor;
   border-radius: 5px;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .border-country:hover{

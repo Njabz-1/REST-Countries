@@ -40,9 +40,10 @@ async function getCountries() {
 }
 let countries = [];
 
+  // Update the DOM with the country data
 async function main() {
   countries = await getCountries();
-  // Update the DOM with the country data
+
   const countryNameEl = document.getElementById("country-name");
   const nativeNameEl = document.getElementById("native-name");
   const populationEl = document.getElementById("population");
@@ -82,10 +83,10 @@ async function main() {
 
     // Check if the border country is found
     if (borderCountry) {
-      const span = document.createElement("span");
-      span.classList.add("border-country");
-      span.textContent = borderCountry.name.common;
-      return span;
+      const anchor = document.createElement("a");
+      anchor.classList.add("border-country");
+      anchor.textContent = borderCountry.name.common;
+      return anchor;
     } else {
       console.warn(`Country with cca3 '${borderCountryCode}' not found.`);
       return null;
@@ -100,5 +101,6 @@ async function main() {
     bordersElement.appendChild(borderCountrySpan);
   });
 }
-
 main();
+
+
