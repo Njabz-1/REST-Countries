@@ -84,8 +84,15 @@ async function main() {
     // Check if the border country is found
     if (borderCountry) {
       const anchor = document.createElement("a");
-      anchor.classList.add("border-country");
+      anchor.classList.add("border-country","col-3", "mb-4");
       anchor.textContent = borderCountry.name.common;
+
+      // If user clicks on border anchor, go to that country's page
+        anchor.addEventListener("click", () => {
+        localStorage.setItem("selectedCountry", JSON.stringify(borderCountry));
+        window.location.href = "country.html";
+        });
+
       return anchor;
     } else {
       console.warn(`Country with cca3 '${borderCountryCode}' not found.`);
