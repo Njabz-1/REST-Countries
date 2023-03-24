@@ -37,6 +37,15 @@ const countriesPerPage = 8;
 
 async function main() {
     const countries = await getCountries();
+    countries.sort((a, b) => {
+      if (a.name.common < b.name.common) {
+        return 1;
+      }
+      if (a.name.common > b.name.common) {
+        return -1;
+      }
+      return 0;
+    }).reverse();
     console.log(countries);
     const countriesContainer = document.getElementById("countries");
     const container = document.createElement("div");
