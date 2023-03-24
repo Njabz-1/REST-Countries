@@ -247,3 +247,20 @@ select {
   width: 20px;
   height: 20px;
 }
+
+/*********************
+******Country Page***
+********************/
+
+.border-country{
+  margin: 0px 5px;
+  padding: 5px 10px;
+  border: 1px solid currentcolor;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.border-country:hover{
+  background-color: var(--Dark-Gray);
+  color: var(--White);
+}

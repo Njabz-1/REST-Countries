@@ -59,11 +59,6 @@ function createBorderCountrySpan(countryCode) {
     const span = document.createElement('span');
     span.classList.add('border-country');
     span.textContent = countryCode;
-    span.style.margin = '0 5px';
-    span.style.padding = '5px 10px';
-    span.style.border = '1px solid currentColor';
-    span.style.borderRadius = '5px';
-    span.style.cursor = 'pointer';
     return span;
   }
   selectedCountry.borders.forEach((borderCountryCode) => {
