@@ -37,6 +37,8 @@ const capital = document.getElementById('capital');
 const topLevelDomain = document.getElementById('tld');
 const currency = document.getElementById('currency');
 const languages = document.getElementById('languages');
+const flagImageURL = selectedCountry.flags.png;
+const flagImage = document.getElementById('country-flag');
 
 countryNameEl.textContent = selectedCountry.name.common;
 nativeNameEl.textContent = Object.values(selectedCountry.name.nativeName)[0].common;
@@ -50,4 +52,5 @@ const currencyCode = Object.keys(selectedCountry.currencies)[0]; // assumes ther
 const currencyName = selectedCountry.currencies[currencyCode].name;
 currency.textContent = currencyName;
 languages.textContent = Object.values(selectedCountry.languages).join(", ");
-console.log(selectedCountry.name);
+flagImage.src = flagImageURL;
+console.log(selectedCountry);
