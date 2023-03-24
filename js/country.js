@@ -39,6 +39,7 @@ const currency = document.getElementById('currency');
 const languages = document.getElementById('languages');
 const flagImageURL = selectedCountry.flags.png;
 const flagImage = document.getElementById('country-flag');
+const bordersElement = document.getElementById('borders');
 
 countryNameEl.textContent = selectedCountry.name.common;
 nativeNameEl.textContent = Object.values(selectedCountry.name.nativeName)[0].common;
@@ -53,4 +54,20 @@ const currencyName = selectedCountry.currencies[currencyCode].name;
 currency.textContent = currencyName;
 languages.textContent = Object.values(selectedCountry.languages).join(", ");
 flagImage.src = flagImageURL;
+// Borders
+function createBorderCountrySpan(countryCode) {
+    const span = document.createElement('span');
+    span.classList.add('border-country');
+    span.textContent = countryCode;
+    span.style.margin = '0 5px';
+    span.style.padding = '5px 10px';
+    span.style.border = '1px solid currentColor';
+    span.style.borderRadius = '5px';
+    span.style.cursor = 'pointer';
+    return span;
+  }
+  selectedCountry.borders.forEach((borderCountryCode) => {
+    const borderCountrySpan = createBorderCountrySpan(borderCountryCode);
+    bordersElement.appendChild(borderCountrySpan);
+  });
 console.log(selectedCountry);
