@@ -89,10 +89,13 @@ select {
 }
 
 
-/* Dark Mode  */
+/********************
+*** Dark Mode*******
+********************/
 .dark-mode {
     background-color: var(--Very-Dark-Blue);
     color: var(--White);
+    transition: background-color 0.5s ease-in-out;
 }
 .dark-mode header {
     color: var(--White);
@@ -138,10 +141,26 @@ select {
   filter: brightness(0) invert(1);
 }
 
-/* Light Mode  */
+.dark-mode .back-arrow {
+  filter: invert(100%);
+}
+
+.dark-mode .back-button {
+  background-color: var(--Dark-Blue);
+  border-color: var(--Dark-Gray);
+  color: var(--White);
+}
+
+.dark-mode .back-button:hover {
+  background-color: var(--Dark-Gray);
+}
+/****************************
+********* Light Mode *******
+***************************/
 .light-mode {
     background-color: var(--Very-Light-Gray);
     color: var(--Very-Dark-Blue-2);
+    transition: background-color 0.5s ease-in-out;
 }
 
 .light-mode header{
@@ -154,6 +173,16 @@ select {
     width: auto;
     height: 2rem;
     margin-right: 0.5rem;
+}
+
+.light-mode .back-button {
+  background-color: var(--White);
+  border-color: var(--Dark-Gray);
+  color: var(--Very-Dark-Blue-2);
+}
+
+.light-mode .back-button:hover {
+  background-color: var(--Dark-Gray);
 }
 
 /************************
@@ -210,38 +239,11 @@ select {
 .back-button {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 0.5rem;
-  transition: background-color 0.3s ease;
-  position: relative;
+  padding: 0.5rem 1.8rem;
 }
 
 .back-arrow {
   width: 20px;
   height: 20px;
-}
-
-.back-button:hover {
-  background-color: var(--Dark-Gray);
-  cursor: pointer;
-}
-
-.dark-mode .back-button {
-  background-color: var(--Very-Dark-Blue);
-  border-color: var(--Dark-Gray);
-  color: var(--White);
-}
-
-.dark-mode .back-button:hover {
-  background-color: var(--Dark-Blue);
-}
-
-.light-mode .back-button {
-  background-color: var(--White);
-  border-color: var(--Dark-Gray);
-  color: var(--Very-Dark-Blue-2);
-}
-
-.light-mode .back-button:hover {
-  background-color: var(--Very-Light-Gray);
 }
