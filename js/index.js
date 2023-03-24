@@ -52,7 +52,7 @@ async function main() {
   
     // Add the scroll event listener
     window.addEventListener("scroll", () => {
-      if (window.innerHeight + window.pageYOffset >=
+      if (window.innerHeight + window.scrollY >=
         document.documentElement.offsetHeight - 1) {
         currentPage++;
         loadMoreCountries(countries, row);
