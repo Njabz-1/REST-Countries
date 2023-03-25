@@ -21,7 +21,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![A glimpse at this simple project](./assets/images/screenshot.png)
 
 
 ### Links
