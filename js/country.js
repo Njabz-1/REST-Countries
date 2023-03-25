@@ -84,7 +84,7 @@ async function main() {
     // Check if the border country is found
     if (borderCountry) {
       const anchor = document.createElement("a");
-      anchor.classList.add("border-country","col-3", "mb-4");
+      anchor.classList.add("border-country", "mb-4","mx-2");
       anchor.textContent = borderCountry.name.common;
 
       // If user clicks on border anchor, go to that country's page

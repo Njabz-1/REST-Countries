@@ -254,12 +254,18 @@ select {
 
 .border-country{
   margin: 0px 5px;
-  padding: 5px 10px;
+  padding: 0.2rem 0.8rem;
   border: 1px solid currentcolor;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  display: inline-block; /* Add display property for better responsiveness */
+  min-width: 80px;
+  max-width: 120px;
 }
 
 .border-country:hover{
