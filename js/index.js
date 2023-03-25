@@ -1,5 +1,4 @@
 // Toggling dark mode
-
 const darkModeToggle = document.getElementById("darkModeToggle");
 const darkModeText = document.querySelector("#darkModeToggle h4");
 const darkModeClass = "dark-mode";
@@ -15,11 +14,29 @@ darkModeToggle.addEventListener("click", () => {
   if (document.body.classList.contains(darkModeClass)) {
     modeIcon.src = sunIconSrc;
     darkModeText.textContent = "Light Mode";
+    localStorage.setItem("mode", darkModeClass);
   } else {
     modeIcon.src = moonIconSrc;
     darkModeText.textContent = "Dark Mode";
+    localStorage.setItem("mode", lightModeClass);
   }
 });
+
+// Storing what mode the user has selected
+function applySavedMode(){
+const savedMode = localStorage.getItem("mode");
+
+document.body.className = savedMode;
+
+if (savedMode === darkModeClass) {
+  modeIcon.src = sunIconSrc;
+  darkModeText.textContent = "Light Mode";
+} else {
+  modeIcon.src = moonIconSrc;
+  darkModeText.textContent = "Dark Mode";
+}
+}
+applySavedMode();
 
 // Fetch request of all countries
 async function getCountries() {

@@ -14,12 +14,29 @@ darkModeToggle.addEventListener("click", () => {
   if (document.body.classList.contains(darkModeClass)) {
     modeIcon.src = sunIconSrc;
     darkModeText.textContent = "Light Mode";
+    localStorage.setItem("mode", darkModeClass);
   } else {
     modeIcon.src = moonIconSrc;
     darkModeText.textContent = "Dark Mode";
+    localStorage.setItem("mode", lightModeClass);
   }
 });
 
+// Storing what mode the user has selected
+function applySavedMode(){
+const savedMode = localStorage.getItem("mode");
+
+document.body.className = savedMode;
+
+if (savedMode === darkModeClass) {
+  modeIcon.src = sunIconSrc;
+  darkModeText.textContent = "Light Mode";
+} else {
+  modeIcon.src = moonIconSrc;
+  darkModeText.textContent = "Dark Mode";
+}
+}
+applySavedMode();
 // Back to home page
 document.getElementById("back-button").addEventListener("click", () => {
   window.location.href = "index.html";
@@ -74,7 +91,7 @@ async function main() {
 
   languages.textContent = Object.values(selectedCountry.languages).join(", ");
   flagImage.src = flagImageURL;
-
+console.log(selectedCountry.borders);
   // Borders
   function createBorderCountryAnchor(borderCountryCode) {
     const borderCountry = countries.find(
@@ -100,7 +117,7 @@ async function main() {
     }
   }
 
-  if (selectedCountry.borders > 0) {
+  if (selectedCountry.borders && selectedCountry.borders.length > 0) {
     selectedCountry.borders.forEach((borderCountryCode) => {
       const borderCountryAnchor = createBorderCountryAnchor(borderCountryCode);
       bordersElement.appendChild(borderCountryAnchor);
