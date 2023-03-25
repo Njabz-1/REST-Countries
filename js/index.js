@@ -98,6 +98,7 @@ let currentPage = 1;
 const countriesPerPage = 8;
 
 let countries = [];
+let regions = ["All"];
 async function main() {
 countries = await getCountries();
   countries
@@ -120,6 +121,11 @@ countries = await getCountries();
   container.appendChild(row);
 
   countriesContainer.appendChild(container);
+
+  // Get unique regions from countries data 
+ regions = [...new Set(countries.map((country) => country.region))];
+
+  populateRegionOptions();
 
   loadMoreCountries(countries, row);
 
@@ -204,15 +210,6 @@ function loadMoreCountries(countries, row) {
 }
 
 // Filter by region functionality
-const regions = [
-  "All",
-  "Africa",
-  "Americas",
-  "Asia",
-  "Europe",
-  "Oceania",
-  "Antartic",
-];
 function populateRegionOptions() {
   const selectElement = document.querySelector(".form-select");
 
@@ -225,4 +222,20 @@ function populateRegionOptions() {
 }
 populateRegionOptions();
 
+filterInput = document.querySelector(".form-select");
+
+filterInput.addEventListener("change", handleFilterChange);
+
+function handleFilterChange(event) {
+  const selectedRegion = event.target.value;
+
+  const filteredCountries = countries.filter((country) => {
+    if (selectedRegion === "All") {
+      return true;
+    }
+    return country.region === selectedRegion;
+  });
+
+  displayCountries(filteredCountries);
+}
 
