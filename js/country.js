@@ -76,7 +76,7 @@ async function main() {
   flagImage.src = flagImageURL;
 
   // Borders
-  function createBorderCountrySpan(borderCountryCode) {
+  function createBorderCountryAnchor(borderCountryCode) {
     const borderCountry = countries.find(
       (country) => country.cca3 === borderCountryCode
     );
@@ -101,11 +101,10 @@ async function main() {
   }
 
   selectedCountry.borders.forEach((borderCountryCode) => {
-    const borderCountrySpan = createBorderCountrySpan(
-      borderCountryCode,
-      countries
+    const borderCountryAnchor = createBorderCountryAnchor(
+      borderCountryCode
     );
-    bordersElement.appendChild(borderCountrySpan);
+    bordersElement.appendChild(borderCountryAnchor);
   });
 }
 main();
