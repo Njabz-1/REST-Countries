@@ -21,7 +21,7 @@ Users should be able to:
 
 ### Screenshot
 
-![A glimpse at this simple project](./assets/images/screenshot/Capture.JPG)
+![A glimpse at this simple project](assets/screenshot/Capture.JPG)
 
 
 ### Links

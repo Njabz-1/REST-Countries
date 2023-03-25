@@ -222,7 +222,7 @@ function populateRegionOptions() {
 }
 populateRegionOptions();
 
-filterInput = document.querySelector(".form-select");
+let filterInput = document.querySelector(".form-select");
 
 filterInput.addEventListener("change", handleFilterChange);
 
