@@ -40,7 +40,7 @@ async function getCountries() {
 }
 let countries = [];
 
-  // Update the DOM with the country data
+// Update the DOM with the country data
 async function main() {
   countries = await getCountries();
 
@@ -84,14 +84,14 @@ async function main() {
     // Check if the border country is found
     if (borderCountry) {
       const anchor = document.createElement("a");
-      anchor.classList.add("border-country", "mb-4","mx-2");
+      anchor.classList.add("border-country", "mb-4", "mx-2");
       anchor.textContent = borderCountry.name.common;
 
       // If user clicks on border anchor, go to that country's page
-        anchor.addEventListener("click", () => {
+      anchor.addEventListener("click", () => {
         localStorage.setItem("selectedCountry", JSON.stringify(borderCountry));
         window.location.href = "country.html";
-        });
+      });
 
       return anchor;
     } else {
@@ -100,13 +100,18 @@ async function main() {
     }
   }
 
-  selectedCountry.borders.forEach((borderCountryCode) => {
-    const borderCountryAnchor = createBorderCountryAnchor(
-      borderCountryCode
-    );
-    bordersElement.appendChild(borderCountryAnchor);
-  });
+  if (selectedCountry.borders > 0) {
+    selectedCountry.borders.forEach((borderCountryCode) => {
+      const borderCountryAnchor = createBorderCountryAnchor(borderCountryCode);
+      bordersElement.appendChild(borderCountryAnchor);
+    });
+  } else {
+    const paragraph = document.createElement("p");
+    paragraph.classList.add("border-country");
+    paragraph.textContent = "None";
+    bordersElement.appendChild(paragraph);
+
+  }
 }
+
 main();
-
-
