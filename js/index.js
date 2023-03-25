@@ -38,6 +38,51 @@ if (savedMode === darkModeClass) {
 }
 applySavedMode();
 
+
+// Search functionality
+const searchInput = document.querySelector(".form-control");
+
+searchInput.addEventListener("input", handleSearch);
+
+// handleSearch function
+function handleSearch(event) {
+  const searchTerm = event.target.value.trim().toLowerCase();
+  const filteredCountries = countries.filter((country) =>
+    country.name.common.toLowerCase().startsWith(searchTerm)
+  );
+
+  displayCountries(filteredCountries);
+}
+
+// Displaying countries function
+function displayCountries(filteredCountries) {
+  const countriesContainer = document.getElementById("countries");
+  countriesContainer.innerHTML = ""; // Clear the previous displayed countries
+
+  const container = document.createElement("div");
+  container.className = "custom-container px-4";
+  const row = document.createElement("div");
+  row.className = "row g-5";
+  container.appendChild(row);
+
+  countriesContainer.appendChild(container);
+
+  filteredCountries.forEach((country) => {
+    // Create country card and add it to the countries container
+    const countryCard = createCountryCard(country);
+    row.appendChild(countryCard);
+  });
+
+  // Show "No countries found..." if the filtered list is empty
+  if (filteredCountries.length === 0) {
+    const noResultsMessage = document.createElement("p");
+    noResultsMessage.textContent = "No countries found...";
+    noResultsMessage.className = "text-center mt-5";
+    countriesContainer.appendChild(noResultsMessage);
+  }
+}
+
+
 // Fetch request of all countries
 async function getCountries() {
   try {
@@ -52,8 +97,9 @@ async function getCountries() {
 let currentPage = 1;
 const countriesPerPage = 8;
 
+let countries = [];
 async function main() {
-  const countries = await getCountries();
+countries = await getCountries();
   countries
     .sort((a, b) => {
       if (a.name.common < b.name.common) {
@@ -95,7 +141,7 @@ main();
 function createCountryCard(country) {
   // Create a column element
   const col = document.createElement("div");
-  col.className = "col-md-3 ms-auto";
+  col.className = "col-md-3";
 
   const card = document.createElement("div");
   card.className = "card";
