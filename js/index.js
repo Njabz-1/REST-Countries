@@ -236,6 +236,28 @@ function handleFilterChange(event) {
     return country.region === selectedRegion;
   });
 
-  displayCountries(filteredCountries);
+  showOverlay();
+
+  const countryCards = document.querySelectorAll(".col-md-3");
+  countryCards.forEach((card) => card.classList.add("hide"));
+
+  setTimeout(() => {
+    displayCountries(filteredCountries);
+    hideOverlay();
+    countryCards.forEach((card) => card.classList.remove("hide"));
+  }, 800);
 }
 
+function showOverlay() {
+  const overlay = document.querySelector('.overlay');
+  const spinner = document.querySelector('.spinner');
+  overlay.style.display = 'block';
+  spinner.style.display = 'flex';
+}
+
+function hideOverlay() {
+  const overlay = document.querySelector('.overlay');
+  const spinner = document.querySelector('.spinner');
+  overlay.style.display = 'none';
+  spinner.style.display = 'none';
+}
