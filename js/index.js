@@ -111,7 +111,7 @@ countries = await getCountries();
       return 0;
     })
     .reverse();
-  console.log(countries);
+    console.log(countries);
   const countriesContainer = document.getElementById("countries");
   const container = document.createElement("div");
   container.className = "custom-container px-4";
@@ -190,7 +190,6 @@ function createCountryCard(country) {
     // Redirect to the country.html page
     window.location.href = "country.html";
   });
-  console.log(localStorage.getItem("selectedCountry"));
   return col;
 }
 
@@ -203,3 +202,27 @@ function loadMoreCountries(countries, row) {
     row.appendChild(countryCard);
   }
 }
+
+// Filter by region functionality
+const regions = [
+  "All",
+  "Africa",
+  "Americas",
+  "Asia",
+  "Europe",
+  "Oceania",
+  "Antartic",
+];
+function populateRegionOptions() {
+  const selectElement = document.querySelector(".form-select");
+
+  regions.forEach((region) => {
+    const option = document.createElement("option");
+    option.value = region;
+    option.textContent = region;
+    selectElement.appendChild(option);
+  });
+}
+populateRegionOptions();
+
+
