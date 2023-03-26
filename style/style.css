@@ -51,8 +51,8 @@ a:not([class]) {
 img,
 picture {
   max-width: 100%;
-  /* display: block; */
-  height: 1%;
+  display: block;
+  height: 100%;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -227,7 +227,7 @@ select {
   opacity: 0;
 }
 .card-img-top {
-  /* border-radius: 0.5rem 0.5rem 0 0; */
+  border-radius: 0.5rem 0.5rem 0 0;
   width: 100%;
   height: auto;
 }
@@ -257,7 +257,8 @@ select {
 ********************/
 
 .border-country{
-  margin: 0px 5px;
+  /* margin: 0px 5px; */
+  margin-right: 1rem;
   padding: 0.2rem 0.8rem;
   border: 1px solid currentcolor;
   border-radius: 5px;

@@ -25,16 +25,16 @@
                 <h4>Dark Mode</h4>
             </button>
         </header>
-        <div id="container">
+        <div id="container" class="container-fluid">
             <div class="px-5 g-0">
                 <button id="back-button" class="btn back-button">
                     <img src="assets/images/icons/icons8-left-arrow-50.png" alt="Back Arrow" class="back-arrow" />
                     Back
                 </button>
             </div>
-            <div class="mt-5 px-5 justify-content-between row g-0">
+            <div class="mt-5 px-5 justify-content-between row g-0 mb-2">
                 <div class="col-4">
-                    <img id="country-flag" src="https://flagcdn.com/w320/gt.png" class="card-img-top"
+                    <img id="country-flag" src="https://flagcdn.com/w320/gt.png"
                         alt="Country Flag" loading="lazy">
                 </div>
                 <div class="col-6">
@@ -51,10 +51,6 @@
                                     id="sub-region"></span></p>
                             <p class="fw-bolder d-flex">Capital: <span class="ms-2 mb-2  fw-normal" id="capital"></span>
                             </p>
-                            <div class="d-flex">
-                                <p class="fw-bolder mb-0 text-nowrap">Border Countries:</p>
-                                <div id="borders" class="d-flex flex-wrap ms-2"></div>
-                            </div>
                         </div>
                         <div class="col-6 mt-5">
                             <p class="fw-bolder d-flex mt-3">Top Level Domain: <span class="ms-2 mb-2 fw-normal"
@@ -65,6 +61,12 @@
                                     id="languages"></span></p>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="row justify-content-end g-0">
+                <div class="col-6 d-flex">
+                    <p class="fw-bolder mb-1 text-nowrap me-4">Border Countries:</p>
+                    <div id="borders" class="d-flex flex-wrap"></div>
                 </div>
             </div>
         </div>

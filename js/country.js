@@ -81,7 +81,7 @@ async function main() {
   populationEl.textContent = selectedCountry.population;
   region.textContent = selectedCountry.region;
   subregion.textContent = selectedCountry.subregion;
-  capital.textContent = selectedCountry.capital[0];
+  capital.textContent = selectedCountry.capital && selectedCountry.capital.length > 0 ? selectedCountry.capital[0] : `${selectedCountry.name.common} does not have a capital.`;
   topLevelDomain.textContent = selectedCountry.tld.join(", ");
 
   // Currency is more complicated
@@ -101,7 +101,7 @@ console.log(selectedCountry.borders);
     // Check if the border country is found
     if (borderCountry) {
       const anchor = document.createElement("a");
-      anchor.classList.add("border-country", "mb-4", "mx-2");
+      anchor.classList.add("border-country", "mb-4");
       anchor.textContent = borderCountry.name.common;
 
       // If user clicks on border anchor, go to that country's page
