@@ -112,7 +112,6 @@ countries = await getCountries();
       return 0;
     })
     .reverse();
-    console.log(countries);
   const countriesContainer = document.getElementById("countries");
   const container = document.createElement("div");
   container.className = "custom-container px-4";

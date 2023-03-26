@@ -91,17 +91,19 @@ async function main() {
 
   languages.textContent = Object.values(selectedCountry.languages).join(", ");
   flagImage.src = flagImageURL;
-console.log(selectedCountry.borders);
   // Borders
-  function createBorderCountryAnchor(borderCountryCode) {
+  function createBorderCountryAnchor(borderCountryCode,index) {
     const borderCountry = countries.find(
       (country) => country.cca3 === borderCountryCode
     );
 
     // Check if the border country is found
     if (borderCountry) {
+          // Add this line to set the animation delay based on the index of the border country
+
       const anchor = document.createElement("a");
-      anchor.classList.add("border-country", "mb-4");
+      anchor.style.animationDelay = `${index * 100}ms`;
+      anchor.classList.add("border-country", "mb-4", "slide-in");
       anchor.textContent = borderCountry.name.common;
 
       // If user clicks on border anchor, go to that country's page
@@ -118,8 +120,8 @@ console.log(selectedCountry.borders);
   }
 
   if (selectedCountry.borders && selectedCountry.borders.length > 0) {
-    selectedCountry.borders.forEach((borderCountryCode) => {
-      const borderCountryAnchor = createBorderCountryAnchor(borderCountryCode);
+    selectedCountry.borders.forEach((borderCountryCode,index) => {
+      const borderCountryAnchor = createBorderCountryAnchor(borderCountryCode,index);
       bordersElement.appendChild(borderCountryAnchor);
     });
   } else {
