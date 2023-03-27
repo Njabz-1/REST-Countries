@@ -350,3 +350,15 @@ select {
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
+
+/* Mobile Responsiveness */
+
+
+/* header */
+@media (min-width: 350px) and (max-width: 380px) {
+  .crescent-image-container {
+    width: auto;
+    height: 2rem;
+    margin-right: 0rem;
+  }
+}
