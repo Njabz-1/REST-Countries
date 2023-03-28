@@ -364,3 +364,9 @@ select {
     margin-right: 0rem;
   }
 }
+
+@media (max-width: 767.98px) {
+  #filterInput.w-50 {
+    width: 100% !important;
+  }
+}
