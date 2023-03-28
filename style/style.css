@@ -370,3 +370,15 @@ select {
     width: 100% !important;
   }
 }
+
+@media (max-width: 767.98px) {
+  .ms-sm-5 {
+    margin-left: 3rem !important; /* equivalent to Bootstrap's ms-5 */
+  }
+}
+
+@media (min-width: 768px) {
+  .ms-sm-5 {
+    margin-left: 0 !important;
+  }
+}
