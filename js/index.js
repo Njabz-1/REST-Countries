@@ -1,6 +1,7 @@
 // Toggling dark mode
 const darkModeToggle = document.getElementById("darkModeToggle");
-const darkModeText = document.querySelector("#darkModeToggle h4");
+const darkModeText = document.querySelector("#darkModeToggle span");
+console.log(darkModeText)
 const darkModeClass = "dark-mode";
 const lightModeClass = "light-mode";
 const modeIcon = document.getElementById("modeIcon");

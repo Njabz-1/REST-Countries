@@ -102,7 +102,7 @@ select {
     background-color: var(--Dark-Blue);
 }
 
-.dark-mode h4{
+.dark-mode span{
     color: var(--White);
 }
 
@@ -252,6 +252,10 @@ select {
   height: 20px;
 }
 
+span {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
 /*********************
 ******Country Page***
 ********************/
