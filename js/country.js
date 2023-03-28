@@ -1,6 +1,6 @@
 // Toggling dark mode
 const darkModeToggle = document.getElementById("darkModeToggle");
-const darkModeText = document.querySelector("#darkModeToggle h4");
+const darkModeText = document.querySelector("#darkModeToggle span");
 const darkModeClass = "dark-mode";
 const lightModeClass = "light-mode";
 const modeIcon = document.getElementById("modeIcon");
@@ -74,6 +74,7 @@ async function main() {
   const flagImage = document.getElementById("country-flag");
   const bordersElement = document.getElementById("borders");
 
+  countryNameEl.innerHTML="";
   countryNameEl.textContent = selectedCountry.name.common;
   nativeNameEl.textContent = Object.values(
     selectedCountry.name.nativeName

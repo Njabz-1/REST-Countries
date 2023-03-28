@@ -10,7 +10,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-        crossorigin="anonymous" />
+        crossorigin="anonymous">
     <link rel="stylesheet" href="style/style.css">
     <title>Country</title>
 </head>
@@ -22,13 +22,13 @@
             <button id="darkModeToggle" class="btn d-flex align-items-center">
                 <img id="modeIcon" class="crescent-image-container"
                     src="./assets/images/icons/icons8-crescent-moon-64.png" alt="crescent moon">
-                <h4>Dark Mode</h4>
+                <span>Dark Mode</span>
             </button>
         </header>
         <div id="container" class="container-fluid">
             <div class="px-5 g-0">
                 <button id="back-button" class="btn back-button">
-                    <img src="assets/images/icons/icons8-left-arrow-50.png" alt="Back Arrow" class="back-arrow" />
+                    <img src="assets/images/icons/icons8-left-arrow-50.png" alt="Back Arrow" class="back-arrow">
                     Back
                 </button>
             </div>
@@ -40,7 +40,9 @@
                 <div class="col-6">
                     <div class="row justify-content-between g-0">
                         <div class="col-6">
-                            <h2 id="country-name" class="mb-4 fw-bold"></h2>
+                            <h2 id="country-name" class="mb-4 fw-bold">
+                                <span class="visually-hidden">Loading country name...</span>
+                            </h2>
                             <p class="fw-bolder d-flex">Native name: <span class="ms-2  mb-2 fw-normal"
                                     id="native-name"></span></p>
                             <p class="fw-bolder d-flex">Population: <span class="ms-2 mb-2  fw-normal"
