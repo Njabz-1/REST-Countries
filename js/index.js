@@ -153,6 +153,7 @@ function createCountryCard(country) {
 
   const flag = document.createElement("img");
   flag.src = country.flags ? country.flags.png : "";
+  flag.alt = `${country.name.common} flag`;
   flag.className = "card-img-top";
   flag.style.width = "100%"; // Adjust the width as needed
   flag.style.height = "200px"; // Adjust the height as needed

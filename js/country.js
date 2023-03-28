@@ -92,6 +92,7 @@ async function main() {
 
   languages.textContent = Object.values(selectedCountry.languages).join(", ");
   flagImage.src = flagImageURL;
+  flagImage.alt = `Flag of ${selectedCountry.name.common}`;
   // Borders
   function createBorderCountryAnchor(borderCountryCode,index) {
     const borderCountry = countries.find(
