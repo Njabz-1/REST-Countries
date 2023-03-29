@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Live Link](https://njabz-1.github.io/REST-Countries-APi/)
+- Live Site URL: [Live Link](https://njabz-1.github.io/REST-Countries/)
 
 ## My process
 
